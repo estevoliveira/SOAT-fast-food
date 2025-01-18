@@ -16,24 +16,41 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository repository;
 
+    @Transactional(readOnly = true)
+    public ProdutoDTO getProductByID(Long id){
+        return new ProdutoDTO(repository.findById(id).get());
+    }
+
     @Transactional
     public ProdutoDTO insert(ProdutoDTO dto){
-        Produto p= new Produto();
-        p.setNome(dto.getNome());
-        p.setCategoria(dto.getCategoria());
-        p.setDescricao(dto.getDescricao());
-        p.setPreco(dto.getPreco());
-        p.setImagem(dto.getImagem());
+        Produto p = new Produto();
+        dtoToProduto(dto,p);
 
+        Categoria c = new Categoria();
+        c.setId(dto.getCategoria().getId());
+        p.setCategoria(c);
+        p = repository.save(p);
+        return new ProdutoDTO(p);
+    }
+    @Transactional
+    public ProdutoDTO update(Long id,ProdutoDTO dto){
+        Produto p = repository.getReferenceById(id);
+        dtoToProduto(dto,p);
         p = repository.save(p);
         return new ProdutoDTO(p);
     }
 
-    @Transactional(readOnly = true)
-    public List<ProdutoDTO> searchByCategoria(Integer categoria){
-        return repository.searchByCategoria(categoria)
-                .stream()
-                .map(ProdutoDTO::new)
-                .toList();
+    @Transactional
+    public void delete(Long id){
+        repository.deleteById(id);
     }
+
+    private void dtoToProduto(ProdutoDTO dto, Produto p) {
+        p.setNome(dto.getNome());
+        p.setDescricao(dto.getDescricao());
+        p.setPreco(dto.getPreco());
+        p.setImagem(dto.getImagem());
+        //p.setCategoria(dto.getCategoria());
+    }
+
 }

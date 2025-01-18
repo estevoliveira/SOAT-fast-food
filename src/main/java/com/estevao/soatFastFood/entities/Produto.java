@@ -22,10 +22,17 @@ public class Produto {
     private Double preco;
     @Column(columnDefinition = "TEXT")
     private String imagem;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+    //private Categoria categoria;
 
     @OneToMany(mappedBy = "pk.produto")
     private Set<PedidoItem> items = new HashSet<>();
+
+    public Produto() {
+    }
 
     public Produto(Long id, String nome, String descricao, Double preco, String imagem, Categoria categoria) {
         this.nome = nome;
@@ -35,8 +42,6 @@ public class Produto {
         this.categoria = categoria;
     }
 
-    public Produto() {
-    }
 
     public Long getId() {
         return id;

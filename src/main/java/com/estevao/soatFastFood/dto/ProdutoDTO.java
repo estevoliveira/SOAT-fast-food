@@ -3,7 +3,6 @@ package com.estevao.soatFastFood.dto;
 import com.estevao.soatFastFood.entities.Categoria;
 import com.estevao.soatFastFood.entities.Produto;
 import com.estevao.soatFastFood.projection.ProdutoProjection;
-import jakarta.persistence.Column;
 
 public class ProdutoDTO {
 
@@ -12,14 +11,14 @@ public class ProdutoDTO {
     private String descricao;
     private Double preco;
     private String imagem;
-    private Categoria categoria;
+    private CategoriaDTO categoria;
 
     public ProdutoDTO(Produto p) {
         this.nome = p.getNome();
         this.descricao = p.getDescricao();
         this.preco = p.getPreco();
         this.imagem = p.getImagem();
-        this.categoria = p.getCategoria();
+        this.categoria = new CategoriaDTO(p.getCategoria());
         this.id = p.getId();
     }
 
@@ -51,11 +50,15 @@ public class ProdutoDTO {
         return imagem;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
+   // public Categoria getCategoria() {
+   //     return categoria;
+   // }
 
     public Long getId() {
         return id;
+    }
+
+    public CategoriaDTO getCategoria() {
+        return categoria;
     }
 }
