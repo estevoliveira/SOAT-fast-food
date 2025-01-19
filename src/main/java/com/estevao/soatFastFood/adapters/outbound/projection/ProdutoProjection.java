@@ -1,4 +1,4 @@
-package com.estevao.soatFastFood.projection;
+package com.estevao.soatFastFood.adapters.outbound.projection;
 
 public interface ProdutoProjection {
     Long getId();

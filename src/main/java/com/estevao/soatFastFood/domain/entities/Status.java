@@ -1,4 +1,4 @@
-package com.estevao.soatFastFood.entities;
+package com.estevao.soatFastFood.domain.entities;
 
 public enum Status {
     RECEBIDO,

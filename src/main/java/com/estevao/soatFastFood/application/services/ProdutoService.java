@@ -1,14 +1,12 @@
-package com.estevao.soatFastFood.services;
+package com.estevao.soatFastFood.application.services;
 
-import com.estevao.soatFastFood.dto.ProdutoDTO;
-import com.estevao.soatFastFood.entities.Categoria;
-import com.estevao.soatFastFood.entities.Produto;
-import com.estevao.soatFastFood.repositories.ProdutoRepository;
+import com.estevao.soatFastFood.domain.dto.ProdutoDTO;
+import com.estevao.soatFastFood.domain.entities.Categoria;
+import com.estevao.soatFastFood.domain.entities.Produto;
+import com.estevao.soatFastFood.adapters.outbound.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Service
 public class ProdutoService {

@@ -1,8 +1,8 @@
-package com.estevao.soatFastFood.services;
+package com.estevao.soatFastFood.application.services;
 
-import com.estevao.soatFastFood.dto.ClienteDTO;
-import com.estevao.soatFastFood.entities.Cliente;
-import com.estevao.soatFastFood.repositories.ClienteRepository;
+import com.estevao.soatFastFood.domain.dto.ClienteDTO;
+import com.estevao.soatFastFood.domain.entities.Cliente;
+import com.estevao.soatFastFood.adapters.outbound.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

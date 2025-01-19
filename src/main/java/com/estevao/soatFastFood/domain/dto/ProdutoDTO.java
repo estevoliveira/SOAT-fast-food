@@ -1,8 +1,7 @@
-package com.estevao.soatFastFood.dto;
+package com.estevao.soatFastFood.domain.dto;
 
-import com.estevao.soatFastFood.entities.Categoria;
-import com.estevao.soatFastFood.entities.Produto;
-import com.estevao.soatFastFood.projection.ProdutoProjection;
+import com.estevao.soatFastFood.domain.entities.Produto;
+import com.estevao.soatFastFood.adapters.outbound.projection.ProdutoProjection;
 
 public class ProdutoDTO {
 

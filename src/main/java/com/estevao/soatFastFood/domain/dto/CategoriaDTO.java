@@ -1,6 +1,6 @@
-package com.estevao.soatFastFood.dto;
+package com.estevao.soatFastFood.domain.dto;
 
-import com.estevao.soatFastFood.entities.Categoria;
+import com.estevao.soatFastFood.domain.entities.Categoria;
 
 public class CategoriaDTO {
 

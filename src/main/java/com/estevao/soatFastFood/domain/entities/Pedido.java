@@ -1,6 +1,5 @@
-package com.estevao.soatFastFood.entities;
+package com.estevao.soatFastFood.domain.entities;
 
-import ch.qos.logback.core.net.server.Client;
 import jakarta.persistence.*;
 
 import java.util.HashSet;

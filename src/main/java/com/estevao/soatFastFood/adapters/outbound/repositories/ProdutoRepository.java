@@ -1,7 +1,7 @@
-package com.estevao.soatFastFood.repositories;
+package com.estevao.soatFastFood.adapters.outbound.repositories;
 
-import com.estevao.soatFastFood.entities.Produto;
-import com.estevao.soatFastFood.projection.ProdutoProjection;
+import com.estevao.soatFastFood.domain.entities.Produto;
+import com.estevao.soatFastFood.adapters.outbound.projection.ProdutoProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

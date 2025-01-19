@@ -1,4 +1,4 @@
-package com.estevao.soatFastFood.entities;
+package com.estevao.soatFastFood.domain.entities;
 
 import jakarta.persistence.*;
 
