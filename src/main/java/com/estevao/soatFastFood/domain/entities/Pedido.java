@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "tb_pedido")
@@ -61,6 +62,6 @@ public class Pedido {
         return items;
     }
     public List<Produto> getProducts() {
-        return items.stream().map(PedidoItem::getProduto).toList();
+        return items.stream().map(PedidoItem::getProduto).collect(Collectors.toList());
     }
 }

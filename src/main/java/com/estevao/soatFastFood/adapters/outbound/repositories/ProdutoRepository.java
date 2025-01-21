@@ -9,7 +9,6 @@ import java.util.List;
 
 public interface ProdutoRepository extends JpaRepository<Produto,Long> {
 
-    //List<GameMinProjection> searchByList(Long listId);
     @Query(nativeQuery = true, value = """
     SELECT p.id,p.nome,p.descricao,p.preco,p.imagem
     FROM TB_PRODUTO as p
@@ -17,5 +16,6 @@ public interface ProdutoRepository extends JpaRepository<Produto,Long> {
     on p.categoria_id = c.id
     where c.id = :categoriaId
     """)
+    //@Query("select p from Produto p where p.categoria_id = :categoriaId")
     List<ProdutoProjection> findProdutosByCategoria(Long categoriaId);
 }

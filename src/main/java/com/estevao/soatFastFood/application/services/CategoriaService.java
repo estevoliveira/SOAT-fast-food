@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CategoriaService {
@@ -24,13 +25,13 @@ public class CategoriaService {
         return produtoRepository.findProdutosByCategoria(categoria)
                 .stream()
                 .map(ProdutoDTO::new)
-                .toList();
+                .collect(Collectors.toList());
     }
     @Transactional(readOnly = true)
     public List<CategoriaDTO> findTodasCategorias(){
         return categoriaRepository.findAll()
                 .stream()
-                .map(c -> new CategoriaDTO(c))
-                .toList();
+                .map(CategoriaDTO::new)
+                .collect(Collectors.toList());
     }
 }

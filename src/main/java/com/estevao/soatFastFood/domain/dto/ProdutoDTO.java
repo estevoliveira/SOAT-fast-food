@@ -21,6 +21,7 @@ public class ProdutoDTO {
         this.id = p.getId();
     }
 
+
     public ProdutoDTO(ProdutoProjection projection) {
         this.id = projection.getId();
         this.nome = projection.getNome();

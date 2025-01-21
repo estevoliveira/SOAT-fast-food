@@ -7,27 +7,26 @@ services:
     image: postgres:14-alpine
     container_name: dev-postgresql
     environment:
-      POSTGRES_DB: mydatabase
+      POSTGRES_DB: fastfooddb
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234567
     ports:
-      - 5433:5432
+      - 5432:5432
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
     volumes:
       - ./.data/postgresql/data:/var/lib/postgresql/data
     networks:
       - dev-network
-  # ====================================================================================================================
-  # PGADMIN
-  # ====================================================================================================================
-  pgadmin-docker:
-    image: dpage/pgadmin4
-    container_name: dev-pgadmin
-    environment:
-      PGADMIN_DEFAULT_EMAIL: me@example.com
-      PGADMIN_DEFAULT_PASSWORD: 1234567
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - 5050:80
-    volumes:
-      - ./.data/pgadmin:/var/lib/pgadmin
+      - 8080:8080
     depends_on:
       - pg-docker
     networks:
