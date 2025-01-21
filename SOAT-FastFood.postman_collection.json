@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "a0f25fb2-381d-4539-8054-0dbd298bedb2",
+		"name": "SOAT FastFood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4094701"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/produtos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Coca Cola 350ML\",\r\n    \"description\": \"Coca cola lata de 350ml\",\r\n    \"preco\":5.50,\r\n    \"imgUrl\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fmercado.carrefour.com.br%2Fcocacola-lata-350-ml-156892%2Fp&psig=AOvVaw28km98TZSRRoQJKU7RPlA9&ust=1737247582158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCK0tmF_ooDFQAAAAAdAAAAABAE\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias/1/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"1",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/produtos/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"X-bacon\",\r\n    \"description\": \"Um lanche com hamburguer artesanal, bacon, queijo chedar\",\r\n    \"preco\":35.50,\r\n    \"imgUrl\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fvocegastro.com.br%2Freceita-de-x-bacon%2F&psig=AOvVaw2UvMHr3_5igGBP1d4izob7&ust=1737246746620000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiBuM-C_ooDFQAAAAAdAAAAABAJ\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/produtos/1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"X-bacon\",\r\n    \"description\": \"Um lanche com hamburguer artesanal, bacon, queijo chedar\",\r\n    \"preco\":35.50,\r\n    \"imgUrl\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fvocegastro.com.br%2Freceita-de-x-bacon%2F&psig=AOvVaw2UvMHr3_5igGBP1d4izob7&ust=1737246746620000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiBuM-C_ooDFQAAAAAdAAAAABAJ\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/produtos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Coca Cola 350ML\",\r\n    \"description\": \"Coca cola lata de 350ml\",\r\n    \"preco\":5.50,\r\n    \"imgUrl\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fmercado.carrefour.com.br%2Fcocacola-lata-350-ml-156892%2Fp&psig=AOvVaw28km98TZSRRoQJKU7RPlA9&ust=1737247582158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCK0tmF_ooDFQAAAAAdAAAAABAE\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Estevao Costa Oliveira\",\r\n    \"email\":\"estoliveira1@gmail.com\",\r\n    \"cpf\":\"47541368899\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/categorias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Coca Cola 350ML\",\r\n    \"description\": \"Coca cola lata de 350ml\",\r\n    \"preco\":5.50,\r\n    \"imgUrl\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fmercado.carrefour.com.br%2Fcocacola-lata-350-ml-156892%2Fp&psig=AOvVaw28km98TZSRRoQJKU7RPlA9&ust=1737247582158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCK0tmF_ooDFQAAAAAdAAAAABAE\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/categorias/1/produtos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Coca Cola 350ML\",\r\n    \"description\": \"Coca cola lata de 350ml\",\r\n    \"preco\":5.50,\r\n    \"imgUrl\": \"https://www.google.com/url?sa=i&url=https%3A%2F%2Fmercado.carrefour.com.br%2Fcocacola-lata-350-ml-156892%2Fp&psig=AOvVaw28km98TZSRRoQJKU7RPlA9&ust=1737247582158000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNCK0tmF_ooDFQAAAAAdAAAAABAE\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias/1/produtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"1",
+						"produtos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
