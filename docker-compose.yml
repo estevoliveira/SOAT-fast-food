@@ -12,16 +12,12 @@ services:
       POSTGRES_PASSWORD: 1234567
     ports:
       - 5432:5432
-    #command: >
-      #-c listen_addresses='*'
-     # -c hba_file=/var/lib/postgresql/data/pg_hba.conf
     volumes:
-      #- ./pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
       - ./.data/postgresql/data:/var/lib/postgresql/data
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]
-      interval: 10s
-      timeout: 5s
+      interval: 15s
+      timeout: 10s
       retries: 5
       start_period: 20s
     networks:
