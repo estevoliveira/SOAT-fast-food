@@ -14,11 +14,25 @@ services:
       - 5432:5432
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]
-      interval: 10s
-      timeout: 5s
+      interval: 20s
+      timeout: 10s
       retries: 3
     volumes:
       - ./.data/postgresql/data:/var/lib/postgresql/data
+    networks:
+      - dev-network
+  pgadmin-docker:
+    image: dpage/pgadmin4
+    container_name: dev-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: me@example.com
+      PGADMIN_DEFAULT_PASSWORD: 1234567
+    ports:
+      - 5050:5050
+    volumes:
+      - ./.data/pgadmin:/var/lib/pgadmin
+    depends_on:
+      - pg-docker
     networks:
       - dev-network
   app:
@@ -28,6 +42,7 @@ services:
     ports:
       - 8080:8080
     depends_on:
+      - pgadmin-docker
       - pg-docker
     networks:
       - dev-network
